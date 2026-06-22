@@ -63,7 +63,7 @@ module Let_and_match = struct
 
     let match_ ~loc ~expr ~cases ~tilde ~stack =
       let loc = { loc with loc_ghost = true } in
-      let f = Ast_builder.Default.pexp_function cases ~loc in
+      let f = Ast_builder.Default.pexp_function_cases ~loc cases in
       expand_application ~loc ~tilde ~stack ~e:expr ~f
     ;;
   end
